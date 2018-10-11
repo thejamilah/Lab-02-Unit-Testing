@@ -4,6 +4,7 @@ namespace Bank_ATM
 {
     public class Program
     {
+        public static double Balance = 10000;
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Bank of Jamilah");
@@ -19,12 +20,14 @@ namespace Bank_ATM
                 "4 Exit");
             int userSelection = int.Parse(Console.ReadLine());
             //Console.WriteLine(userSelection);
-            switch(userSelection)
+            switch (userSelection)
             {
                 case 1:
+                    CheckBalance();
                     break;
 
                 case 2:
+                    Withdrawal();
                     break;
 
                 case 3:
@@ -39,9 +42,29 @@ namespace Bank_ATM
                     break;
             }
             //Check Balance
-            //Withdraw
+            //Withdrawal
             //Deposit
             //Exit
+        }
+        public static void CheckBalance()
+        {
+            Console.WriteLine($"Your Balance is:{Balance}");
+            Menu();
+        }
+
+        public static void Withdrawal()
+        {
+            Console.WriteLine("How much would you like to withdraw?\n");
+            double userSelection = double.Parse(Console.ReadLine());
+            //withdrawal for more than available balance
+            WithdrawalFromBalance(userSelection);
+        }
+
+        public static double WithdrawalFromBalance(double withdrawalAmount)
+        {
+            Balance -= withdrawalAmount;
+            Console.WriteLine(Balance);
+            return Balance;
         }
     }
 }
