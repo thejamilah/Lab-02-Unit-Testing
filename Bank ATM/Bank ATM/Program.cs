@@ -31,6 +31,7 @@ namespace Bank_ATM
                     break;
 
                 case 3:
+                    Deposit();
                     break;
 
                 case 4:
@@ -41,10 +42,7 @@ namespace Bank_ATM
                     Menu();
                     break;
             }
-            //Check Balance
-            //Withdrawal
-            //Deposit
-            //Exit
+
         }
         public static void CheckBalance()
         {
@@ -55,14 +53,61 @@ namespace Bank_ATM
         public static void Withdrawal()
         {
             Console.WriteLine("How much would you like to withdraw?\n");
-            double userSelection = double.Parse(Console.ReadLine());
-            //withdrawal for more than available balance
-            WithdrawalFromBalance(userSelection);
+
+            try
+            {
+                double userSelection = double.Parse(Console.ReadLine());
+                if(userSelection > Balance)
+                {
+                    Console.WriteLine("You can not take more than you give!");
+                    Withdrawal();
+                }
+                WithdrawalFromBalance(userSelection);
+
+            }
+
+            catch(Exception)
+
+            {
+                Withdrawal();
+            }
+            
+            
         }
 
         public static double WithdrawalFromBalance(double withdrawalAmount)
         {
             Balance -= withdrawalAmount;
+            Console.WriteLine(Balance);
+            return Balance;
+        }
+
+        public static void Deposit()
+        {
+            Console.WriteLine("How much would you like to deposit?\n");
+            
+            try
+            {
+                double userSelection = double.Parse(Console.ReadLine());
+                if(userSelection < 0 )
+                {
+                    Console.WriteLine("You can not deposit a negative amount!");
+                    Deposit();
+                }
+                DepositIntoBalance(userSelection);
+            }
+            catch (Exception)
+            {
+
+                Deposit();
+            }
+
+            
+        }
+
+        public static double DepositIntoBalance(double depositAmount)
+        {
+            Balance += depositAmount;
             Console.WriteLine(Balance);
             return Balance;
         }
