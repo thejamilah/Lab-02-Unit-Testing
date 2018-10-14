@@ -4,12 +4,13 @@ namespace Bank_ATM
 {
     public class Program
     {
-        public static double Balance = 10000;
+        public static decimal Balance = 10000;
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Bank of Jamilah");
             Menu();
         }
+
 
         public static void Menu()
         {
@@ -19,7 +20,7 @@ namespace Bank_ATM
                 "3 Deposit\n" +
                 "4 Exit");
             int userSelection = int.Parse(Console.ReadLine());
-            //Console.WriteLine(userSelection);
+            
             switch (userSelection)
             {
                 case 1:
@@ -44,19 +45,24 @@ namespace Bank_ATM
             }
 
         }
+
+
         public static void CheckBalance()
         {
             Console.WriteLine($"Your Balance is:{Balance}");
             Menu();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static void Withdrawal()
         {
             Console.WriteLine("How much would you like to withdraw?\n");
 
             try
             {
-                double userSelection = double.Parse(Console.ReadLine());
+                decimal userSelection = decimal.Parse(Console.ReadLine());
                 if(userSelection > Balance)
                 {
                     Console.WriteLine("You can not take more than you give!");
@@ -75,7 +81,7 @@ namespace Bank_ATM
             
         }
 
-        public static double WithdrawalFromBalance(double withdrawalAmount)
+        public static decimal WithdrawalFromBalance(decimal withdrawalAmount)
         {
             Balance -= withdrawalAmount;
             Console.WriteLine(Balance);
@@ -88,7 +94,7 @@ namespace Bank_ATM
             
             try
             {
-                double userSelection = double.Parse(Console.ReadLine());
+                decimal userSelection = decimal.Parse(Console.ReadLine());
                 if(userSelection < 0 )
                 {
                     Console.WriteLine("You can not deposit a negative amount!");
@@ -104,8 +110,12 @@ namespace Bank_ATM
 
             
         }
-
-        public static double DepositIntoBalance(double depositAmount)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="depositAmount"></param>
+        /// <returns></returns>
+        public static decimal DepositIntoBalance(decimal depositAmount)
         {
             Balance += depositAmount;
             Console.WriteLine(Balance);
