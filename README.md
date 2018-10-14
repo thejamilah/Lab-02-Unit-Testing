@@ -7,5 +7,3 @@ This lab assignment introduces the creation of unit testing for Test Driven Deve
 ## USE
 The user is presented with and expected to enter selections of balance view, withdrawal, deposit, and exit from the sample program
 
-## Useful Hints for C# Test Implementation
-You cannot unit test console WriteLine or Readline
