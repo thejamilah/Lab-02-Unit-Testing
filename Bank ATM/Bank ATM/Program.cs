@@ -29,10 +29,12 @@ namespace Bank_ATM
 
                 case 2:
                     Withdrawal();
+                    Menu();
                     break;
 
                 case 3:
                     Deposit();
+                    Menu();
                     break;
 
                 case 4:
@@ -111,7 +113,7 @@ namespace Bank_ATM
             
         }
         /// <summary>
-        /// 
+        /// This function handles the deposit and outputs users balance
         /// </summary>
         /// <param name="depositAmount"></param>
         /// <returns></returns>
