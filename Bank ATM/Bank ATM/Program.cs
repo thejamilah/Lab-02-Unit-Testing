@@ -14,11 +14,11 @@ namespace Bank_ATM
 
         public static void Menu()
         {
-            Console.WriteLine("Please Make a Selection\n" +
+            Console.WriteLine("Please Make a Selection 1 - 4\n" +
                 "1 Check Balance\n" +
                 "2 Withdrawal\n" +
                 "3 Deposit\n" +
-                "4 Exit");
+                "4 Exit\n");
             int userSelection = int.Parse(Console.ReadLine());
             
             switch (userSelection)
@@ -41,7 +41,8 @@ namespace Bank_ATM
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("Please Select Items 1 - 4");
+                    Console.Clear();
+                    Console.WriteLine("You did not select option 1 - 4. Please Select Items 1 - 4");
                     Menu();
                     break;
             }
@@ -86,7 +87,7 @@ namespace Bank_ATM
         public static decimal WithdrawalFromBalance(decimal withdrawalAmount)
         {
             Balance -= withdrawalAmount;
-            Console.WriteLine(Balance);
+            Console.WriteLine($"Your new available balance is {Balance}");
             return Balance;
         }
 
@@ -120,7 +121,7 @@ namespace Bank_ATM
         public static decimal DepositIntoBalance(decimal depositAmount)
         {
             Balance += depositAmount;
-            Console.WriteLine(Balance);
+            Console.WriteLine($"Your new available balance is {Balance}");
             return Balance;
         }
     }
