@@ -20,3 +20,5 @@ Within step three the exception handling prevents negative a negative amount of 
 
 ## Program Image
 ![bankatm](https://user-images.githubusercontent.com/39015829/46912463-00470d80-cf2b-11e8-848e-73667d0eb2ed.jpg)
+![withdrawal](https://user-images.githubusercontent.com/39015829/46986835-44aae880-d0a6-11e8-9011-80ed826e3c28.jpg)
+![balance check](https://user-images.githubusercontent.com/39015829/46986839-483e6f80-d0a6-11e8-80ba-40a215f4792b.jpg)
