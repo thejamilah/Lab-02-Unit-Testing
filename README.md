@@ -1,7 +1,6 @@
-# Lab-02-Unit-Testing
-## .NET C# Educational Lab Assignment - ATM
+# .NET C# Educational Lab Assignment - ATM
 
-### Learning
+### Learning Objectivess
 This lab assignment introduces the creation of unit testing for Test Driven Development. In addition to TDD some of the methods used in this excercise are Switch Case and exception handling using try and catch. 
 
 ## USE
